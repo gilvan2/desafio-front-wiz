@@ -10,11 +10,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { DadosEntregaComponent } from './dados-entrega/dados-entrega.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DadosPessoaisComponent,
+    DadosEntregaComponent,
   ],
   imports: [
     BrowserModule,
