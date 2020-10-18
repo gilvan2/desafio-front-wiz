@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DadosEntregaComponent implements OnInit {
 
+  dadosEntrega = {
+    cep: '',
+    endereco: '',
+    pais: '',
+    estado: '',
+    cidade: '',
+    telefone:''
+  }
+
   constructor() { }
 
   ngOnInit(): void {
