@@ -7,13 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DadosPessoaisComponent implements OnInit {
   
-  dadosPessoais = {
-    primeiroNome: '',
-    ultimoNome: '',
-    cpf: '',
-    dataNascimento: '',
-    email: ''
-  }
+  addAcompanhante: boolean = false;
 
   constructor() { }
 

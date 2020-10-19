@@ -4,6 +4,7 @@
       <mat-card-title>DADOS PESSOAIS</mat-card-title>
     </mat-card-header>
     <mat-card-content>
+      
       <form>
           <mat-form-field style="width: 50%;">
             <input matInput placeholder="Primeiro nome">
@@ -21,10 +22,34 @@
           <mat-label>Email</mat-label>
           <input matInput placeholder="Ex. exemplo@email.com">
         </mat-form-field>
-      </form>  
+      </form> 
+
+ 
+        <mat-form-field *ngIf="addAcompanhante">
+          <form>
+            <mat-form-field style="width: 50%;">
+              <input matInput placeholder="Primeiro nome">
+            </mat-form-field>
+            <mat-form-field style="width: 50%;">
+              <input matInput placeholder="Último nome">
+            </mat-form-field>
+            <mat-form-field style="width: 50%;">
+              <input matInput placeholder="CPF">
+            </mat-form-field>
+            <mat-form-field style="width: 50%;">
+              <input matInput placeholder="Data de nascimento">
+            </mat-form-field>
+          <mat-form-field style="width: 100%;">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Ex. exemplo@email.com">
+          </mat-form-field>
+        </form> 
+        </mat-form-field>
+
     </mat-card-content>
     <mat-card-actions>
-      <mat-checkbox>Adicionar acompanhante</mat-checkbox>
+      <mat-checkbox [(ngModel)]="addAcompanhante" name="addAcompanhante">Adicionar acompanhante</mat-checkbox>
     </mat-card-actions>  
   </mat-card>  
-</section>  
+</section> 
+ 
