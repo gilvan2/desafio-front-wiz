@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { DadosPessoaisComponent } from './dados-pessoais/dados-pessoais.component';
+import { FormsModule } from '@angular/forms';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
@@ -32,6 +33,7 @@ import { FormularioVendaComponent } from './formulario-venda/formulario-venda.co
     MatInputModule,
     MatCheckboxModule,
     MatGridListModule,
+    FormsModule,
 
   ],
   providers: [],
