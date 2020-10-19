@@ -11,12 +11,17 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { DadosEntregaComponent } from './dados-entrega/dados-entrega.component';
+import { SeuIngressoComponent } from './seu-ingresso/seu-ingresso.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { FormularioVendaComponent } from './formulario-venda/formulario-venda.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DadosPessoaisComponent,
     DadosEntregaComponent,
+    SeuIngressoComponent,
+    FormularioVendaComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +31,7 @@ import { DadosEntregaComponent } from './dados-entrega/dados-entrega.component';
     MatButtonModule,
     MatInputModule,
     MatCheckboxModule,
+    MatGridListModule,
 
   ],
   providers: [],
