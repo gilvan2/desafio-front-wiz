@@ -15,6 +15,7 @@ import { DadosEntregaComponent } from './dados-entrega/dados-entrega.component';
 import { SeuIngressoComponent } from './seu-ingresso/seu-ingresso.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FormularioVendaComponent } from './formulario-venda/formulario-venda.component';
+import { DadosPessoaisAcompanhanteComponent } from './dados-pessoais/dados-pessoais-acompanhante/dados-pessoais-acompanhante.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormularioVendaComponent } from './formulario-venda/formulario-venda.co
     DadosEntregaComponent,
     SeuIngressoComponent,
     FormularioVendaComponent,
+    DadosPessoaisAcompanhanteComponent,
   ],
   imports: [
     BrowserModule,
