@@ -16,6 +16,10 @@ import { SeuIngressoComponent } from './seu-ingresso/seu-ingresso.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FormularioVendaComponent } from './formulario-venda/formulario-venda.component';
 import { DadosPessoaisAcompanhanteComponent } from './dados-pessoais/dados-pessoais-acompanhante/dados-pessoais-acompanhante.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import { TextMaskModule } from 'angular2-text-mask';
+
 
 @NgModule({
   declarations: [
@@ -36,6 +40,9 @@ import { DadosPessoaisAcompanhanteComponent } from './dados-pessoais/dados-pesso
     MatCheckboxModule,
     MatGridListModule,
     FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    TextMaskModule,
 
   ],
   providers: [],

@@ -16,6 +16,9 @@ export class DadosEntregaComponent implements OnInit {
     telefone:''
   }
 
+  public mascara = '';
+  public mask = [ /[0-9]/, /\d/, /\d/, /\d/, /\d/, /\d/,  '-',/\d/,/\d/]
+
   constructor() { }
 
   ngOnInit(): void {

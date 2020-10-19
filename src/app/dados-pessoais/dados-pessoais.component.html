@@ -11,19 +11,24 @@
             <input matInput placeholder="Último nome">
           </mat-form-field>
           <mat-form-field style="width: 50%;">
-            <input matInput placeholder="CPF">
+
+            <input matInput placeholder="CPF" [textMask]="{mask: mask}" [(ngModel)]="mascara" type="text">
+          
           </mat-form-field>
-          <mat-form-field style="width: 50%;">
-            <input matInput placeholder="Data de nascimento">
+          <mat-form-field appearance="fill">
+            <mat-label>Data de nascimento</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
         <mat-form-field style="width: 100%;">
           <mat-label>Email</mat-label>
-          <input matInput placeholder="Ex. exemplo@email.com">
+          <input matInput placeholder="Ex. exemplo@email.com" mask="000.000.000-00">
         </mat-form-field>
         <div *ngIf="addAcompanhante" class="dadosAcompanhante">
           <app-dados-pessoais-acompanhante></app-dados-pessoais-acompanhante>
         </div>
-      </form> 
+      </form>
     </mat-card-content>
     <mat-card-actions>
       <mat-checkbox [(ngModel)]="addAcompanhante" name="addAcompanhante">Adicionar acompanhante</mat-checkbox>

@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class DadosPessoaisComponent implements OnInit {
   
   addAcompanhante: boolean = false;
+  
+  public mascara = '';
+  public mask = [ /[0-9]/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/,  '-',/\d/,/\d/]
 
   constructor() { }
 

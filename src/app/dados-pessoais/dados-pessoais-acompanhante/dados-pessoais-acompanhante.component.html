@@ -13,8 +13,11 @@
           <mat-form-field style="width: 50%;">
             <input matInput placeholder="CPF">
           </mat-form-field>
-          <mat-form-field style="width: 50%;">
-            <input matInput placeholder="Data de nascimento">
+          <mat-form-field appearance="fill">
+            <mat-label>Data de nascimento</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
         <mat-form-field style="width: 100%;">
           <mat-label>Email</mat-label>
