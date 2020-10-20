@@ -4,21 +4,25 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { DadosPessoaisComponent } from './dados-pessoais/dados-pessoais.component';
-import { FormsModule } from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { DadosEntregaComponent } from './dados-entrega/dados-entrega.component';
-import { SeuIngressoComponent } from './seu-ingresso/seu-ingresso.component';
+import {DadosEntregaComponent} from './dados-entrega/dados-entrega.component';
+import {SeuIngressoComponent} from './seu-ingresso/seu-ingresso.component';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { FormularioVendaComponent } from './formulario-venda/formulario-venda.component';
-import { DadosPessoaisAcompanhanteComponent } from './dados-pessoais/dados-pessoais-acompanhante/dados-pessoais-acompanhante.component';
+import {FormularioVendaComponent} from './formulario-venda/formulario-venda.component';
+import {DadosPessoaisAcompanhanteComponent } from './dados-pessoais/dados-pessoais-acompanhante/dados-pessoais-acompanhante.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
-import { TextMaskModule } from 'angular2-text-mask';
+import {TextMaskModule} from 'angular2-text-mask';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {HttpClientModule} from '@angular/common/http'
+
 
 
 @NgModule({
@@ -40,9 +44,13 @@ import { TextMaskModule } from 'angular2-text-mask';
     MatCheckboxModule,
     MatGridListModule,
     FormsModule,
+    ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
     TextMaskModule,
+    FlexLayoutModule,
+    HttpClientModule,
+  
 
   ],
   providers: [],

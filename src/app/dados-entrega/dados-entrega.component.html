@@ -1,35 +1,27 @@
 <section>
-  <mat-card class="dadosEntrega">
-    <mat-card-header>
-      <mat-card-title>DADOS DA ENTREGA</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <form>
-        <mat-form-field style="width: 100%;">
-          <input matInput placeholder="Cep" [textMask]="{mask: mask}" [(ngModel)]="mascara" type="text">
-        </mat-form-field>
-        <mat-form-field style="width: 100%;">
-          <input matInput placeholder="Endereço">
-        </mat-form-field>
-        <mat-form-field style="width: 50%;">
-          <input matInput placeholder="Pais">
-        </mat-form-field>
-        <mat-form-field style="width: 50%;">
-          <input matInput placeholder="Estado">
-        </mat-form-field>
-        <mat-form-field style="width: 100%;">
-          <input matInput placeholder="Cidade">
-        </mat-form-field>
-        <mat-form-field style="width: 100%;">
-          <mat-label>Telefone</mat-label>
-          <span matPrefix>+(55) &nbsp;</span>
-          <input type="tel" matInput placeholder="9 9999 9999">
-        </mat-form-field>
-
-      </form>  
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary">Enviar</button>
-    </mat-card-actions>  
-  </mat-card>  
+  <h1 style="margin-left: 15%;">DADOS ENTREGA</h1>
+  <div class="dadosEntrega">
+    <form>
+      <mat-form-field style="width: 100%;">
+        <input matInput placeholder="Cep" [textMask]="{mask: mask}" [(ngModel)]="mascara" type="text" required minlength="8" name = "cep">
+      </mat-form-field>
+      <mat-form-field style="width: 100%;">
+        <input matInput placeholder="Endereço" required>
+      </mat-form-field>
+      <mat-form-field style="width: 50%;">
+        <input matInput placeholder="Pais" required>
+      </mat-form-field>
+      <mat-form-field style="width: 50%;">
+        <input matInput placeholder="Estado" required>
+      </mat-form-field>
+      <mat-form-field style="width: 100%;">
+        <input matInput placeholder="Cidade" required>
+      </mat-form-field>
+      <mat-form-field style="width: 100%;">
+        <mat-label>Telefone</mat-label>
+        <span matPrefix>+(55) &nbsp;</span>
+        <input type="tel" matInput placeholder="9 9999 9999" required>
+      </mat-form-field>
+    </form>
+  </div>
 </section> 
