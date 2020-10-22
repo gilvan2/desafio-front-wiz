@@ -9,9 +9,11 @@ import { Enderecos } from './enderecos.module';
 export class CorreiosService {
 
   readonly url: string = 'https://viacep.com.br/ws/73752123/json';
+
   constructor(private http: HttpClient) { }
 
-  getEndereco(): Observable<Enderecos[]>{
+  getEndereco():Observable<Enderecos[]> {
     return this.http.get<Enderecos[]>(`${this.url}`); 
   }
+
 }

@@ -1,3 +1,7 @@
 .dadosEntrega{
     margin: 20px;
 }
+
+.field-error{
+   color: red; 
+}
