@@ -3,22 +3,30 @@
   <div class="seuIngresso">
   <section>
     <div class="esquerda" style="float: left; width: 50%;">
-      <img mat-card-image src="https://image.tmdb.org/t/p/original/lP5eKh8WOcPysfELrUpGhHJGZEH.jpg" 
-      alt="Bloodshot" style="width: 70%;">
+      <img mat-card-image name="imagem" src={{imagem}} onclick="click()" style="width: 70%;">
     </div>
     <div class="direita" style="float: right; width: 50%;">
       <h2>Ingresso</h2>
-      <h2>Filme: O mochileiro das galáxias</h2>
+      <h2>Filme: {{titulo}}</h2>
       <h2></h2>
-      <h2>R$20,00</h2>
-
+      <h2>R${{preco}}</h2>
     </div>
   </section>
   <section>
     <div class="totais" style="float: left;width: 100%; margin-left: 15%;">
-      <h2>Sub total</h2>
-      <h2>Frete</h2>
-      <h1>Total</h1>
+      <section>
+        <h2 style="float: left; width: 50%;">Sub total</h2>
+        <h2 style="float: right; width: 50%;">R${{subtotal}}</h2>
+      </section>
+      <section>
+        <h2 style="float: left; width: 50%;">Frete</h2>
+        <h2 style="float: right; width: 50%;">R${{frete}}</h2>
+      </section>
+      <section>
+        <h2 style="float: left; width: 50%;">Total</h2>
+        <h2 style="float: right; width: 50%;">R${{total}}</h2>
+      </section>
+      
     </div>
   </section>
   </div>

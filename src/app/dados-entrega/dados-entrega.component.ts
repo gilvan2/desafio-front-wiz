@@ -16,7 +16,7 @@ export class DadosEntregaComponent{
   cep: string = "cep";
   logradouro: string = "";
   pais: string = "";
-  uf: string = "UF";
+  uf: string = "";
   localidade: string = "";
 
   public dadosEnderecos: Enderecos[];
