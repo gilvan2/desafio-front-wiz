@@ -1,31 +1,85 @@
-<section>
-  <h1 style="margin-left: 15%;">DADOS PESSOAIS</h1>
-  <div class="dadosPessoais">
-    <form>
-      <mat-form-field style="width: 50%;">
-        <input matInput placeholder="Primeiro nome" required>
-      </mat-form-field>
-      <mat-form-field style="width: 50%;">
-        <input matInput placeholder="Último nome" required>
-      </mat-form-field>
-      <mat-form-field style="width: 50%;">
-        <input matInput placeholder="CPF" [textMask]="{mask: mask}" [(ngModel)]="mascara" type="text" name = "cpf"required>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Data de nascimento</mat-label>
-        <input matInput [matDatepicker]="picker" required>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-    <mat-form-field style="width: 100%;">
-      <mat-label>Email</mat-label>
-      <input matInput placeholder="Ex. exemplo@email.com" mask="000.000.000-00" required>
+
+<h1 style="margin-left: 15%;">DADOS PESSOAIS</h1>
+    <mat-form-field style="width: 45%;">
+      <input matInput placeholder="Primeiro nome" autocomplete="off" type="text" 
+      required minlength="2" name="nome" [(ngModel)]="nome"  #nomeField="ngModel">
+      <mat-error *ngIf="nomeField.errors?.required">
+        <p>Este campo é obrigatório</p>
+      </mat-error>
+      <mat-error *ngIf="nomeField.errors?.minlength">
+        <p>Nome precisa ter ao menos 2 digitos</p>
+      </mat-error> 
     </mat-form-field>
-    <div *ngIf="addAcompanhante" class="dadosAcompanhante">
-      <app-dados-pessoais-acompanhante></app-dados-pessoais-acompanhante>
-    </div>
-  </form>
-  <mat-checkbox [(ngModel)]="addAcompanhante" name="addAcompanhante">Adicionar acompanhante</mat-checkbox>
+    <mat-form-field style="width: 45%; margin: 5%;">
+      <input matInput placeholder="Último nome" autocomplete="off" minlength="2" 
+      name="ultimoNome" [(ngModel)]="ultimoNome"  #ultimoNomeField="ngModel" required>
+      <mat-error *ngIf="ultimoNomeField.errors?.required">
+        <p>Este campo é obrigatório</p>
+      </mat-error>
+      <mat-error *ngIf="ultimoNomeField.errors?.minlength">
+        <p>Ultimo nome precisa ter ao menos 2 digitos</p>
+      </mat-error> 
+    </mat-form-field>
+    <mat-form-field style="width: 45%;">
+      <input matInput placeholder="CPF" [textMask]="{mask: mask}" [(ngModel)]="mascara" type="text" minlength="11"
+      name ="cpf" autocomplete="off" [(ngModel)]="cpf"  #cpfField="ngModel" required>
+      <mat-error *ngIf="cpfField.errors?.required">
+        <p>Este campo é obrigatório</p>
+      </mat-error>
+      <mat-error *ngIf="cpfField.errors?.minlength">
+        <p>CPF precisa de todos os 11 digitos</p>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field style="width: 40%; margin: 5%;">
+      <mat-label>Data de nascimento</mat-label>
+      <input matInput [matDatepicker]="picker" autocomplete="off"  name ="dtNascimento" 
+      [(ngModel)]="dtNascimento"  #dtNascimentoField="ngModel" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="dtNascimentoField.errors?.required">
+        <p>Este campo é obrigatório</p>
+      </mat-error>
+    </mat-form-field>
+  <mat-form-field style="width: 100%;">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Ex. exemplo@email.com" type="email"required email nome="email" 
+    [(ngModel)]="email" #emailField="ngModel" autocomplete="off">
+    <mat-error *ngIf="emailField.errors?.required">
+      <p>Este campo é obrigatório</p>
+    </mat-error>
+    <mat-error *ngIf="emailField.errors?.email">
+      <p>Favor inserir um email válidop</p>
+    </mat-error>
+  </mat-form-field>
+  <div *ngIf="addAcompanhante" class="dadosAcompanhante">
+    <app-dados-pessoais-acompanhante></app-dados-pessoais-acompanhante>
   </div>
-</section>
-      
+<mat-checkbox [(ngModel)]="addAcompanhante" name="addAcompanhante">Adicionar acompanhante</mat-checkbox>
+
+<!--
+<mat-accordion>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        This is the expansion title
+      </mat-panel-title>
+      <mat-panel-description>
+        This is a summary of the content
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the primary content of the panel.</p>
+  </mat-expansion-panel>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Self aware panel
+      </mat-panel-title>
+      <mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>I'm visible because I am open</p>
+  </mat-expansion-panel>
+</mat-accordion>
+-->

@@ -9,6 +9,16 @@ export class DadosPessoaisAcompanhanteComponent implements OnInit {
 
   constructor() { }
 
+  nome = '';
+  ultimoNome = '';
+  cpf ='';
+  dtNascimento = '';
+  email = '';
+  
+  public mascara = '';
+  public mask = [ /[0-9]/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/,  '-',/\d/,/\d/]
+
+
   ngOnInit(): void {
   }
 

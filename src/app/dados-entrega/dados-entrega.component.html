@@ -1,12 +1,8 @@
-<section>
   <h1 style="margin-left: 15%;">DADOS ENTREGA</h1>
   <div class="dadosEntrega">
-    <form #formClient="ngForm" (ngSubmit)="onSubmit()">
-
-
       <mat-form-field style="width: 100%;">
       <input matInput placeholder="Cep" [textMask]="{mask: mask}" [(ngModel)]="mascara" type="text" 
-      required minlength="8" [(ngModel)]="cep" name = "cep" #cepField="ngModel" (input)="inputEvent($event)">
+      autocomplete="off" required minlength="8" [(ngModel)]="cep" name = "cep" #cepField="ngModel" (input)="inputEvent($event)">
       <mat-error *ngIf="cepField.errors?.required">
         <p>CEP é um campo obrigatório</p>
       </mat-error>
@@ -15,28 +11,20 @@
       </mat-error>  
     </mat-form-field>
       <mat-form-field style="width: 100%;">
-        <input matInput placeholder="Endereço" [value]="logradouro" required>
+        <input matInput placeholder="Endereço" [value]="logradouro" required autocomplete="off">
       </mat-form-field>
-      <mat-form-field style="width: 50%;">
-        <input matInput placeholder="Pais" [value]="pais" required>
+      <mat-form-field style="width: 45%;">
+        <input matInput placeholder="Pais" [value]="pais" required autocomplete="off">
       </mat-form-field>
-      <mat-form-field style="width: 50%;">
-        
-        <!--<input matInput placeholder="Estado" required [(ngModel)]="dadosEnd.uf" name="uf">-->
-        <input matInput placeholder="Estado" [value]="uf" required>
+      <mat-form-field style="width: 45%; margin: 5%;">
+        <input matInput placeholder="Estado" [value]="uf" required autocomplete="off">
       </mat-form-field>
       <mat-form-field style="width: 100%;">
-        <input matInput placeholder="Cidade" [value]="localidade" required>
+        <input matInput placeholder="Cidade" [value]="localidade" required autocomplete="off">
       </mat-form-field>
       <mat-form-field style="width: 100%;">
         <mat-label>Telefone</mat-label>
         <span matPrefix>+(55) &nbsp;</span>
-        <input type="tel" matInput placeholder="9 9999 9999" required>
+        <input type="tel" matInput placeholder="9 9999 9999" required autocomplete="off">
       </mat-form-field>
-    </form>
   </div>
-  
-
-
-
-</section> 

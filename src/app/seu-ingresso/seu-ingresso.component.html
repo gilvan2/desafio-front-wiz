@@ -6,7 +6,13 @@
       <img mat-card-image name="imagem" src={{imagem}} onclick="click()" style="width: 70%;">
     </div>
     <div class="direita" style="float: right; width: 50%;">
-      <h2>Ingresso</h2>
+      <mat-form-field appearance="fill">
+        <mat-label>Filmes</mat-label>
+        <mat-select disableRipple (selectionChange)="trocaSelecao($event)">
+          <mat-option value={{f.id}} *ngFor="let f of buscaFilmes">{{f.title}} </mat-option>
+        </mat-select>
+      </mat-form-field>
+
       <h2>Filme: {{titulo}}</h2>
       <h2></h2>
       <h2>R${{preco}}</h2>

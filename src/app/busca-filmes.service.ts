@@ -8,7 +8,7 @@ import { Filmes } from './filmes.module';
 })
 export class BuscaFilmesService {
 
-  
+  readonly url: string = 'https://api.themoviedb.org/3/movie/upcoming?api_key=32ed0c054091aee103a0f55c35e13930&language=pt-BR&page=1';
 
   constructor(private http: HttpClient) { }
 

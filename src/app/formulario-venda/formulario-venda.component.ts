@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioVendaComponent implements OnInit {
 
+  public firstName;
+  public lastName;
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  onInit(){}
+  
+  ngOnInit(): void {}
+
+  onSubmit(){}
+
 
 }

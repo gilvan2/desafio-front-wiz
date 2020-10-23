@@ -1,27 +1,30 @@
-<!--
-<mat-card class="dadosEntrega">
-    <mat-card-header>
-      <mat-card-title>FORMULARIO</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
--->
-        <div class="formulario">
-            <div class="esquerda">
-                <app-dados-pessoais></app-dados-pessoais>
-                <app-dados-entrega></app-dados-entrega>
-            </div>
-            <div class="direita">
-                <app-seu-ingresso></app-seu-ingresso>
-            </div>
-        </div>
-        <!--
-    </mat-card-content>
+<!--<app-modal-filmes></app-modal-filmes>-->
 
-    <mat-card-actions>
-      <button mat-raised-button color="primary">Enviar</button>
-    </mat-card-actions>
-
-  </mat-card>    
--->
-
-
+<div layout="column" layout-fill>
+    <div align="center" layout="row" layout-align="center center">
+      <mat-card class="info-card mat-elevation-z8" flex="80" style="margin-top: 60px;width: 1200px;">
+        <mat-card-title>Formulário</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+        <mat-card-content fxLayout="column" fxLayoutAlign="stretch" >
+          <form (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="start stretch"  #formClient="ngForm" (ngSubmit)="onSubmit()">
+            <!--Os dados dos formulários vão entrar aqui-->
+            <div class="formulario">
+              <div class="esquerda" fxFlex="100%"  fxLayout="column" fxLayoutAlign="space-between  start">
+                  <app-dados-pessoais></app-dados-pessoais>
+                  <mat-divider></mat-divider>
+                 <app-dados-entrega></app-dados-entrega>
+                 <mat-divider></mat-divider>
+              </div>
+              <div class="direita" fxFlex="100%"  fxLayout="column" fxLayoutAlign="space-between  start">
+                  <app-seu-ingresso></app-seu-ingresso>
+              </div>
+          </div>
+          </form>
+          <button mat-button color="primary" type="submit" >
+            <mat-icon>done</mat-icon>Submit
+          </button>
+        </mat-card-content>
+        <mat-card-footer>
+        </mat-card-footer>
+      </mat-card>
+    </div>

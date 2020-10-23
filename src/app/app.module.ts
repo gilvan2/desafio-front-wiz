@@ -23,10 +23,12 @@ import {HttpClientModule} from '@angular/common/http';
 //import {JsonpModule, Jsonp, Response} from '@angular/http';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
-
-
-
-
+import {MatDividerModule} from '@angular/material/divider';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ModalFilmesComponent } from './modal-filmes/modal-filmes.component';
+import { ModalComponent } from './modal/modal.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import {MatListModule} from '@angular/material/list';
     SeuIngressoComponent,
     FormularioVendaComponent,
     DadosPessoaisAcompanhanteComponent,
+    ModalFilmesComponent,
+    ModalComponent,
     
   ],
   imports: [
@@ -58,7 +62,11 @@ import {MatListModule} from '@angular/material/list';
     //JsonpModule,
     MatIconModule,
     MatListModule,
+    MatDividerModule,
     //map,
+    MatExpansionModule,
+    MatDialogModule,
+    MatSelectModule,
     
     
   

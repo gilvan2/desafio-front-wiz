@@ -1,26 +1,52 @@
-<section>
-  <h1 style="margin-left: 15%;">ACOMPANHANTE 1</h1>
-  <div class="acompanhante">
-    <form>
-      <mat-form-field style="width: 50%;">
-        <input matInput placeholder="Primeiro nome" required>
-      </mat-form-field>
-      <mat-form-field style="width: 50%;">
-        <input matInput placeholder="Último nome" required>
-      </mat-form-field>
-      <mat-form-field style="width: 50%;">
-        <input matInput placeholder="CPF" required>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Data de nascimento</mat-label>
-        <input matInput [matDatepicker]="picker" required>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-      <mat-form-field style="width: 100%;">
-      <mat-label>Email</mat-label>
-      <input matInput placeholder="Ex. exemplo@email.com" required>
-    </mat-form-field>
-    </form>
-  </div>
-</section>
+<h1 style="margin-left: 15%;">ACOMPANHANTE 1</h1>
+<mat-form-field style="width: 45%;">
+  <input matInput placeholder="Primeiro nome" autocomplete="off" type="text" 
+  required minlength="2" name="nome" [(ngModel)]="nome"  #nomeField="ngModel">
+  <mat-error *ngIf="nomeField.errors?.required">
+    <p>Este campo é obrigatório</p>
+  </mat-error>
+  <mat-error *ngIf="nomeField.errors?.minlength">
+    <p>Nome precisa ter ao menos 2 digitos</p>
+  </mat-error> 
+</mat-form-field>
+<mat-form-field style="width: 45%; margin: 5%;">
+  <input matInput placeholder="Último nome" autocomplete="off" minlength="2" 
+  name="ultimoNome" [(ngModel)]="ultimoNome"  #ultimoNomeField="ngModel" required>
+  <mat-error *ngIf="ultimoNomeField.errors?.required">
+    <p>Este campo é obrigatório</p>
+  </mat-error>
+  <mat-error *ngIf="ultimoNomeField.errors?.minlength">
+    <p>Ultimo nome precisa ter ao menos 2 digitos</p>
+  </mat-error> 
+</mat-form-field>
+<mat-form-field style="width: 45%;">
+  <input matInput placeholder="CPF" [textMask]="{mask: mask}" [(ngModel)]="mascara" type="text" minlength="11"
+  name ="cpf" autocomplete="off" [(ngModel)]="cpf"  #cpfField="ngModel" required>
+  <mat-error *ngIf="cpfField.errors?.required">
+    <p>Este campo é obrigatório</p>
+  </mat-error>
+  <mat-error *ngIf="cpfField.errors?.minlength">
+    <p>CPF precisa de todos os 11 digitos</p>
+  </mat-error>
+</mat-form-field>
+<mat-form-field style="width: 40%; margin: 5%;">
+  <mat-label>Data de nascimento</mat-label>
+  <input matInput [matDatepicker]="picker" autocomplete="off"  name ="dtNascimento" 
+  [(ngModel)]="dtNascimento"  #dtNascimentoField="ngModel" required>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+  <mat-error *ngIf="dtNascimentoField.errors?.required">
+    <p>Este campo é obrigatório</p>
+  </mat-error>
+</mat-form-field>
+<mat-form-field style="width: 100%;">
+<mat-label>Email</mat-label>
+<input matInput placeholder="Ex. exemplo@email.com" type="email"required email nome="email" 
+[(ngModel)]="email" #emailField="ngModel" autocomplete="off">
+<mat-error *ngIf="emailField.errors?.required">
+  <p>Este campo é obrigatório</p>
+</mat-error>
+<mat-error *ngIf="emailField.errors?.email">
+  <p>Favor inserir um email válidop</p>
+</mat-error>
+</mat-form-field>
