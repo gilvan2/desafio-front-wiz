@@ -1,17 +1,20 @@
   <h1 style="margin-left: 15%;">DADOS ENTREGA</h1>
   <div class="dadosEntrega">
       <mat-form-field style="width: 100%;">
-      <input matInput placeholder="Cep" [textMask]="{mask: mask}" [(ngModel)]="mascara" type="text" 
-      autocomplete="off" required minlength="8" [(ngModel)]="cep" name = "cep" #cepField="ngModel" (input)="inputEvent($event)">
+      <input matInput placeholder="Cep" [textMask]="{mask: mask}" [(ngModel)]="mascara" required 
+      minlength="8" [(ngModel)]="cep" name = "cep" #cepField="ngModel" (input)="inputEvent($event)" autocomplete="off" type="text">
       <mat-error *ngIf="cepField.errors?.required">
-        <p>CEP é um campo obrigatório</p>
+        <p>Este campo é obrigatório</p>
       </mat-error>
       <mat-error *ngIf="cepField.errors?.minlength">
         <p>O CEP Precisa ter 8 digitos</p>
       </mat-error>  
     </mat-form-field>
       <mat-form-field style="width: 100%;">
-        <input matInput placeholder="Endereço" [value]="logradouro" required autocomplete="off">
+        <input matInput placeholder="Endereço" [value]="logradouro" autocomplete="off" required>
+        <mat-error *ngIf="cepField.errors?.required">
+          <p>Este campo é obrigatório</p>
+        </mat-error>
       </mat-form-field>
       <mat-form-field style="width: 45%;">
         <input matInput placeholder="Pais" [value]="pais" required autocomplete="off">

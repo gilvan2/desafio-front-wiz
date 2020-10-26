@@ -12,7 +12,7 @@ export class CorreiosService {
 
   constructor(private http: HttpClient) { }
 
-  getEndereco():Observable<Enderecos[]> {
+  getEndereco(cep:string):Observable<Enderecos[]> {
     return this.http.get<Enderecos[]>(`${this.url}`); 
   }
 

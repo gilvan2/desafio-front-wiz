@@ -30,7 +30,7 @@ export class DadosEntregaComponent{
   inputEvent(event){
     if(event.target.selectionEnd == 9){
 
-      this.correiosService.getEndereco().subscribe(
+      this.correiosService.getEndereco(this.cep).subscribe(
         (enderecos:Enderecos[]) => {console.log("Achei os dados de endereços")
         this.dadosEnderecos = enderecos;
         console.log(this.dadosEnderecos['cep']);

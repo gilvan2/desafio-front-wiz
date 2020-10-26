@@ -6,8 +6,7 @@
         <mat-card-title>Formulário</mat-card-title>
         <mat-card-subtitle></mat-card-subtitle>
         <mat-card-content fxLayout="column" fxLayoutAlign="stretch" >
-          <form (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="start stretch"  #formClient="ngForm" (ngSubmit)="onSubmit()">
-            <!--Os dados dos formulários vão entrar aqui-->
+          <form (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="start stretch"  #formClient="ngForm">
             <div class="formulario">
               <div class="esquerda" fxFlex="100%"  fxLayout="column" fxLayoutAlign="space-between  start">
                   <app-dados-pessoais></app-dados-pessoais>
@@ -20,7 +19,7 @@
               </div>
           </div>
           </form>
-          <button mat-button color="primary" type="submit" >
+          <button mat-button color="primary" [disabled]="!formClient.valid" type="submit" >
             <mat-icon>done</mat-icon>Submit
           </button>
         </mat-card-content>
