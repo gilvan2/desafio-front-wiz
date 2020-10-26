@@ -23,8 +23,8 @@
 - Clone o projeto no seu ambiente de desenvolvimento via linha de comando ou através de um client git de sua preferência.
 `git clone https://github.com/gilvan2/desafio-front-wiz.git`
 
-- Navegar até o diretório raiz do projeto baixado e pela linha de comando executar o comando ng serve 
+- Navegar até o diretório raiz do projeto baixado e pela linha de comando executar o comando "npm install" e assim que esse comando for concluído, executar o comando "ng serve" 
 
 - Abrir a pagina de qualquer navegador de preferencia e digitar a url http://localhost:4200/
 
-- Testes - Para executar os testes, navegar até o diretório raiz do projeto e digitar no terminal o comando ng test
+- Testes - Para executar os testes, navegar até o diretório raiz do projeto e digitar no terminal o comando "ng test"
